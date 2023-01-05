@@ -57,3 +57,5 @@ class NumericParameterItem(WidgetParameterItem):
                 sbOpts[k] = v
         self.widget.setOpts(**sbOpts)
         self.updateDisplayLabel()
+
+    def blah(self): return True

@@ -17,6 +17,8 @@ class WidgetParameterItem(ParameterItem):
 
     This class can be subclassed by overriding makeWidget() to provide a custom widget.
     """
+    def blah(self): return False
+
     def __init__(self, param, depth):
         ParameterItem.__init__(self, param, depth)
 
@@ -43,7 +45,8 @@ class WidgetParameterItem(ParameterItem):
         layout.setContentsMargins(0, 0, 0, 0)
         layout.setSpacing(2)
         if not self.asSubItem:
-            layout.addWidget(w, 1)
+            if not self.blah():
+                layout.addWidget(w, 1)
         layout.addWidget(self.displayLabel, 1)
         layout.addStretch(0)
         layout.addWidget(self.defaultBtn)
